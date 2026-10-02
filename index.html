@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bollywood Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="player">
+    <!-- Now playing -->
+    <section class="now" aria-label="Now playing">
+      <div class="art" id="art"></div>
+      <h1 id="title">Loading...</h1>
+      <p id="artist"></p>
+      <p id="movie" class="muted"></p>
+      <p id="status" class="status" role="status"></p>
+
+      <div class="progress-row">
+        <span id="current">0:00</span>
+        <input type="range" id="progress" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+        <span id="duration">0:00</span>
+      </div>
+
+      <div class="controls">
+        <button id="prev" aria-label="Previous song">&#9198;</button>
+        <button id="play" class="play" aria-label="Play">&#9654;</button>
+        <button id="next" aria-label="Next song">&#9197;</button>
+      </div>
+
+      <div class="extras">
+        <button id="mute" aria-label="Mute">&#128266;</button>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+        <label class="auto"><input type="checkbox" id="autoplay" checked> Autoplay next</label>
+      </div>
+      <label class="upload">+ Add songs from my device
+        <input type="file" id="files" accept="audio/*" multiple class="sr">
+      </label>
+      <p class="muted note">Bollywood clips are 30-second previews, courtesy of Apple.</p>
+    </section>
+
+    <!-- Playlist -->
+    <section class="playlist" aria-label="Playlist">
+      <h2>Playlist</h2>
+      <ol id="list"></ol>
+    </section>
+  </main>
+
+  <audio id="audio" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
